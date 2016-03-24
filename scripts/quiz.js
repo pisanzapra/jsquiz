@@ -17,7 +17,7 @@ var score = 0;
         
 //creating an Array of objects
 var allTheTasks = new Array();
-allTheTasks.push(new Task("What year did Queen Victoria die?", "1911", "1901", 2));
+allTheTasks.push(new Task("In which year did Queen Victoria die?", "1911", "1901", 2));
 allTheTasks.push(new Task("Of which country is Canberra the capital?", "South Africa", "Australia", 2));
 allTheTasks.push(new Task("In which year did Britney Spears shave her head?", "2007", "2010", 1));
 allTheTasks.push(new Task("What is the meaning of life?", "Apples", "42", 2));
