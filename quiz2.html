@@ -1,0 +1,102 @@
+<html>
+<head>
+    <title>
+        Quiz
+    </title>
+</head>
+
+<body>
+    <div id="question">
+    </div>
+    <div>
+        <form>
+  <input id="answer1" type="radio" name="answer" value="answer1" /> <label for="answer1" id="answer1label"> </label><br />
+  <input id="answer2" type="radio" name="answer" value="answer2" /> <label for="answer2" id="answer2label"> </label><br />
+<input id="button" type="button" value="Check ma answers" onclick="CheckAnswers()" />
+</form>
+
+    </div>
+    <div id="feedback" />
+    
+    
+    <script type="text/javascript">
+        "use strict";
+    /* OLD CODE. KEEPING JUST IN CASE NEEDED LATER
+        var question = document.getElementById("question");
+        question.innerHTML = "What is the meaning of life?";
+        var answer1 = document.getElementById("answer1label");
+        answer1.innerHTML = "Answer 1: 42";
+        var answer2 = document.getElementById("answer2label");
+        answer2.innerHTML = "Answer 2: Pi";
+        
+        */
+        
+        var feedback = document.getElementById("feedback");
+        
+        /* OLD CODE. KEEPING JUST IN CASE NEEDED LATER.
+        function CheckAnswers() {
+            var selectedAnswer = document.querySelector('input[name="answer"]:checked').value;
+            feedback.innerHTML = selectedAnswer;
+        }
+        */
+        
+        
+     
+       //creating a new object
+        
+        function Task(question, answer1, answer2, correctAnswer) {
+            this.question = question;
+            this.answer1 = answer1;
+            this.answer2 = answer2;
+            this.correctAnswer = correctAnswer;
+        }
+        
+        //creating an Array of objects
+        var allTheTasks = new Array();
+        allTheTasks[0] = new Task("What is the meaning of life?", "Answer 1: 42", "Answer2: Pi", 1);
+        allTheTasks[1] = new Task("Will a glass smash if you drop it?", "Very likely", "Impossible", 1);
+
+        var currentTask = 0;
+        
+        var questionDiv = document.getElementById("question");
+        questionDiv.innerHTML = allTheTasks[currentTask].question;
+        var answer1 = document.getElementById("answer1label");
+        answer1.innerHTML = allTheTasks[currentTask].answer1;
+        var answer2 = document.getElementById("answer2label");
+        answer2.innerHTML = allTheTasks[currentTask].answer2;
+       
+       
+   
+        
+        var score = 0;
+        
+        function NextQuestion() {
+           // if ()
+            
+        }
+        
+        function CheckAnswers() {
+            if (!document.getElementById('answer1').checked
+                && !document.getElementById('answer2').checked)
+                return;
+            
+            // the first is a local variable, the second correctAnswer is a property on the Task object
+            var correctAnswer = allTheTasks[currentTask].correctAnswer; 
+            
+            var correctAnswerSelected = document.getElementById('answer' + correctAnswer).checked;
+            
+            if (correctAnswerSelected) {
+               ++score;
+               feedback.innerHTML = "You correctly selected answer. Your score is now " + score;
+               
+            }
+            else  {
+                feedback.innerHTML = "Nope, you're wrong";
+            }
+        }
+        
+        
+        </script>
+</body>
+
+</html>
