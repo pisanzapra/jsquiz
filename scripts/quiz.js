@@ -40,11 +40,7 @@ function showFinalScore() {
 }
 
 
-function checkAnswers() {
-    if (!document.getElementById('answer1').checked
-        && !document.getElementById('answer2').checked)
-        return;
-            
+function checkAnswers() {            
     // the first is a local variable, the second correctAnswer is a property on the Task object
     var correctAnswer = allTheTasks[currentTask].correctAnswer;
 
@@ -64,9 +60,13 @@ function checkAnswers() {
 
 
 function nextQuestion() {
+    if (!document.getElementById('answer1').checked
+        && !document.getElementById('answer2').checked)
+        return;
+
     checkAnswers();
     // if the current task position is less than the total length of the array
-    if (currentTask < allTheTasks.length-1) {
+    if (currentTask < allTheTasks.length - 1) {
         currentTask++;
         setTask(currentTask);
         return;
