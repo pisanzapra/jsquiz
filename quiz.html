@@ -1,6 +1,32 @@
 <html>
-    <body>
-        <div id="hiMessage"></div>
-        <script type="text/javascript" src="scripts/quiz.js"></script>
-    </body>
+<link rel="stylesheet" type="text/css" href="quiz-style.css">
+<head>
+    <title>
+        Quiz
+    </title>
+</head>
+
+<body>
+    <div id="quiz">
+    <div id="question-wrapper">
+        <div id="question">
+        </div>
+        <div>
+            <form>
+                <input id="answer1" type="radio" name="answer" value="answer1" />
+                <label for="answer1" id="answer1label"> </label>
+                <br />
+                <input id="answer2" type="radio" name="answer" value="answer2" />
+                <label for="answer2" id="answer2label"> </label>
+                <br />
+                <input id="next-button" type="button" value="Next question" onclick="nextQuestion()" />
+            </form>
+        </div>
+    </div>
+    <div id="feedback" />
+    </div>
+
+    <script type="text/javascript" src="scripts/quiz.js"></script>
+</body>
+
 </html>
