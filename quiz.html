@@ -13,20 +13,21 @@
         </div>
         <div>
             <form>
-                <input id="answer1" type="radio" name="answer" value="answer1" />
-                <label for="answer1" id="answer1label"> </label>
+                <input id="answer1" type="radio" name="answer" value="answer1" class="quiz-radio" />
+                <label for="answer1" id="answer1label" class="quiz-label"> </label>
                 <br />
-                <input id="answer2" type="radio" name="answer" value="answer2" />
-                <label for="answer2" id="answer2label"> </label>
+                <input id="answer2" type="radio" name="answer" value="answer2" class="quiz-radio" />
+                <label for="answer2" id="answer2label" class="quiz-label"> </label>
                 <br />
-                <input id="next-button" type="button" value="Next question" onclick="nextQuestion()" />
+                <input id="next-button" type="button" value="Next question &rsaquo;&rsaquo;" onclick="nextQuestion()" />
             </form>
         </div>
     </div>
     <div id="feedback" />
     </div>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/quiz.js"></script>
+    
 </body>
 
 </html>
