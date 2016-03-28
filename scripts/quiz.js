@@ -42,7 +42,7 @@ function setTask(taskNumber) {
 }
 
 // change task function 
-function changeTask(taskNumber) {
+function displayNewTask(taskNumber) {
     // look at again when more alert
     $("#question-wrapper").fadeOut("slow", function() {
         setTask(taskNumber);
@@ -51,7 +51,7 @@ function changeTask(taskNumber) {
 }
 
 // setting up the check answers function, which is triggered every time the user clicks the Next Question button
-function checkAnswers() {
+function checkAnswer() {
     // the first is a local variable, the second correctAnswer is a property on the Task object
     var correctAnswer = allTheTasks[currentTask].correctAnswer;
 
@@ -95,12 +95,12 @@ function nextQuestion() {
         && !document.getElementById('answer2').checked)
         return;
 
-    checkAnswers();
+    checkAnswer();
 
     // if there are any more questions to be shown to the user, set the next question, then exit
     if (currentTask < allTheTasks.length - 1) {
         currentTask++;
-        changeTask(currentTask);
+        displayNewTask(currentTask);
         return;
     }
 
@@ -111,4 +111,4 @@ function nextQuestion() {
 
 }
 
-changeTask(0);
+displayNewTask(0);
