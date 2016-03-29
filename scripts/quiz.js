@@ -36,7 +36,8 @@ function setTask(taskNumber) {
     var questionDiv = document.getElementById("question");
     questionDiv.innerHTML = allTheTasks[taskNumber].question;
 
-    // ATTEMPT TO LOOP OVER EACH ANSWER WITHIN THE ANSWERS ARRAY AND DISPLAY AS MANY LABELS AND RADIO BUTTONS AS NECESSARY
+    // ATTEMPT TO LOOP OVER EACH ANSWER WITHIN THE ANSWERS ARRAY AND
+    // DISPLAY AS MANY LABELS AND RADIO BUTTONS AS NECESSARY
 
     // Store all the answers associated with the current task as taskAllAnswers    
     var taskAllAnswers = allTheTasks[taskNumber].answers;
@@ -82,9 +83,11 @@ function displayNewTask(taskNumber) {
     });
 }
 
-// setting up the check answers function, which is triggered every time the user clicks the Next Question button
+// setting up the check answers function, which is triggered every
+// time the user clicks the Next Question button
 function checkAnswer() {
-    // the first is a local variable, the second correctAnswer is a property on the Task object
+    // the first is a local variable, the second correctAnswer is a property
+    // on the Task object
     var correctAnswer = allTheTasks[currentTask].correctAnswer;
 
     var correctAnswerSelected = document.getElementById('answer' + correctAnswer).checked;
@@ -140,11 +143,13 @@ function hasUserSelectedAnAnswer() {
     for (var i = 1; i <= numberofAnswers; i++) {
         if (document.getElementById('answer' + i).checked) {
             // if false, doesn't return ANYTHING. Moves on to next answer radio button
-            // when the statement evaluates to true, evaluates hasUserSelectedAnAnswer as true in this instance and stops running the loop. Done!
+            // when the statement evaluates to true, evaluates hasUserSelectedAnAnswer as
+            // true in this instance and stops running the loop. Done!
             return true;
         }
     }
-    // By this point, the loop has looked at every radio button and still not found one that has been checked. Therefore, the statement must be false.
+    // By this point, the loop has looked at every radio button and still not found one
+    // that has been checked. Therefore, the statement must be false.
     return false;
 }
 
