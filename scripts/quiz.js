@@ -10,6 +10,8 @@ function Task(question, answers, correctAnswer) {
 var questionWrapper = document.getElementById("question-wrapper");
 var feedback = document.getElementById("feedback");
 var answersWrapper = document.getElementById("answers-wrapper");
+var startAgainWrapper = document.getElementById("start-again-wrapper");
+
 
 //setting the starting task number and score to 0
 var currentTask = 0;
@@ -64,6 +66,28 @@ function setTask(taskNumber) {
         answerDiv.appendChild(quizRadio);
         answerDiv.appendChild(quizRadioLabel);
         answersWrapper.appendChild(answerDiv);
+
+    }
+
+    // if we're on any task other than task 1, show the start again button    
+    if (currentTask >= allTheTasks.length - 4) {
+
+    while (startAgainWrapper.hasChildNodes()) {
+        startAgainWrapper.removeChild(startAgainWrapper.lastChild);
+        }        
+
+        var startAgainButton = document.createElement("input");
+        startAgainButton.type = 'button';
+        startAgainButton.className = 'quiz-button';
+        startAgainButton.id = 'start-again-button'
+        startAgainButton.value = "Start again \u203a\u203a"
+        startAgainButton.onclick = function() {
+            userAnswers.length = 0;
+            score = 0;
+            displayNewTask(0);
+        };
+
+        startAgainWrapper.appendChild(startAgainButton);
 
     }
 
@@ -130,6 +154,8 @@ function showFinalScore() {
         }
 
         feedback.appendChild(response);
+
+        
     }
 }
 
@@ -158,6 +184,7 @@ function nextQuestion() {
 
     // if there are any more questions to be shown to the user, set the next question, then exit
     if (currentTask < allTheTasks.length - 1) {
+
         currentTask++;
         displayNewTask(currentTask);
         return;
@@ -169,5 +196,7 @@ function nextQuestion() {
     }
 
 }
+
+
 
 displayNewTask(0);
