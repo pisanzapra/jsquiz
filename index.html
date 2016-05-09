@@ -1,23 +1,37 @@
 <html>
-<link rel="stylesheet" type="text/css" href="quiz-style.css">
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="knowledge-quiz-style.css">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        Quiz
+        English history quiz
     </title>
 </head>
 
 <body>
-    <div id="quiz">
+        <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P2QXCP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P2QXCP');
+    </script>
+    <!-- End Google Tag Manager -->
+    <div id="quiz-wrapper">
+	<h1>English history quiz</h1>
         <div id="question-wrapper">
             <div id="question">
             </div>
             <div>
                 <form>
-                    <div id="answers-wrapper">
+                    <div id="answers">
 
                     </div>
-                    <div id="buttons-wrapper">
+                    <div id="buttons">
                     <input class="quiz-button" id="next-button" type="button" value="Next question &rsaquo;&rsaquo;" onclick="nextQuestion()" />
                     <div id="start-again-wrapper">
                     </div>
@@ -25,10 +39,20 @@
                 </form>
             </div>
         </div>
-        <div id="feedback" />
-    </div>
+        <div id="feedback">
+		
+		       <div id="scores">
+			   <span id="score-text"></span><span id="score-number"></span>
+			   </div>
+			   <div id="responses-wrapper"></div>
+               <div>
+   
+              <input class="quiz-button" id="facebook-share-button" type="button" value="Share my score on Facebook!" onclick="shareToFacebook()">
+              </div>
+        </div>
+		
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script type="text/javascript" src="scripts/quiz.js"></script>
+    <script type="text/javascript" src="scripts/knowledge-quiz.js"></script>
 
 </body>
 

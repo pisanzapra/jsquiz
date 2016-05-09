@@ -1,0 +1,163 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+background: linear-gradient( rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6) ), url(images/westminster.jpg);
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+h1 {
+    line-height: 125%;
+    letter-spacing: 0.3rem;
+}
+
+#question {
+    font-size: 1.25em;
+    line-height: 125%;
+    margin-bottom: 30px;
+}
+
+input { 
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+#quiz-wrapper {
+    font-size: 27px; 
+    margin: 0 auto;
+    text-align: center;
+    width: 800px;
+    border: 0;
+    font-family: 'Source Sans Pro', serif;
+    font-style: normal;
+    font-weight: 300;
+    color:#fff;
+    line-height: 150%;
+}
+
+.quiz-radio {
+    display: none;
+}
+
+.quiz-label { 
+    width: 600px;   
+    border: 1px solid #fff;
+    padding: 5px 10%;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.quiz-label:hover {
+    background-color: #99a5b1;
+    border: #99a5b1;
+    color: #000;
+}
+
+.quiz-radio:checked + .quiz-label {
+    background-color: #99a5b1;
+    border: #99a5b1;
+    color: #fff;
+    font-weight: 400;
+}
+
+#buttons {
+    display: block;
+}
+
+.quiz-button {
+    border: 0;
+    background-color: #998100;
+    margin-top: 15px;
+    padding: 10px 30px;
+    font-size: 1em;
+    font-family: 'Source Sans Pro', serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.quiz-button:hover {
+    background-color: #e6c200;
+    color: #000;
+    cursor: pointer;
+}
+
+.quiz-button:focus {
+    outline: 0;
+}
+
+
+#feedback {
+    display: none;
+}
+
+#scores {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+.response {
+    margin-bottom: 10px;
+}
+
+.quiz-correct-answer {
+    color: #6abd45;
+}
+
+
+.quiz-incorrect-answer {
+    color: #f00f26
+}
+
+#score-number {
+    font-weight: 400;
+}
+
+
+
+@media screen and (max-width: 700px) {
+
+body{
+	background: linear-gradient( rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6) ), url(images/westminster-mobile-45kb.jpg);
+	background-position: center center;
+}
+
+
+    #quiz-wrapper {
+        width: 100%;
+        font-size: 1em;
+        line-height: 78%;
+        padding: 10px;
+    }
+    
+    .quiz-label { 
+        width: 100%;  
+        line-height: 150%; 
+    }
+
+    .quiz-button {
+        width: 80%;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+        letter-spacing: 0.1rem;
+    }
+    
+    .response {
+           line-height: 150%;
+    }
+    
+}
